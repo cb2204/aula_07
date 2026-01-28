@@ -4,7 +4,7 @@ from typing import List
 
 #1 
 def calcular_media(valores: List[float]) -> float:
-    return sum(valores) / len(valores)
+    return sum(valores / len(valores))
 
 def filtrar_acima_de(valores: List[float],limite: float)-> List[float]:
     resultado =[]
@@ -35,4 +35,14 @@ def desvio_padrao(lista: List[float]) -> List[float]:
     media = calcular_media(lista)
     variancia = sum((x - media)** 2 for x in lista) /len(lista)
     return variancia**0.5
+# %%
+def encontrar_valores_ausentes(sequencia: List[int]) -> List[int]:
+    completo = set(range(min(sequencia), max(sequencia) + 1))
+    return list(completo - set(sequencia))
+
+
+lista_inteira =[1,2,4,6,9,10]
+
+encontrar_valores_ausentes(lista_inteira)
+
 # %%
